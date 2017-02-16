@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <!-- Your app title -->
+    <title>District Coffee</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+
+    <script type="text/javascript">
+$(document).ready(function()
+ {
+   
+   var url="http://www.districtcoffee.co.uk/?json=get_recent_posts";
+   $.getJSON(url,function(result){
+    $.each(result.posts, function(i, field){
+       var title=field.title;
+       $("#listview").append("<li><h2>"+title+"<h2></li>");
+    });
+   });
+ });
+</script>
+
+</head>
+
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+        <ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="menu.html">Menu</a></li>
+<li><a href="findus.html">Find Us</a></li>
+<li><a href="wifi.html">Information</a></li>       	
+        </ul>
+        </div>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding"><img src="img/logoblack-1.png" width="200"></div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block" style="">
+
+<h3 class="widget-title">Menu</h3>
+
+<div>
+
+<h3 class="widget-title">BREAKFAST</h3>
+
+    <p><i>Available until 3pm</i></p>
+<table style="text-align: left;">
+<tbody>
+<tr>
+<td>porridge with fruit compote, nuts &amp; seeds (vg) made with almond milk</td>
+<td>£4.25</td>
+</tr>
+<tr>
+<td>triple nut granola with natural yoghurt, fruit compote, nuts &amp; seeds (v)</td>
+<td>£4.25</td>
+</tr>
+<tr>
+<td>poached eggs &amp; bacon on sourdough toast with chilli &amp; mango relish</td>
+<td>£5.75</td>
+</tr>
+<tr>
+<td>avocado on sourdough toast with dukkah and chilli &amp; mango relish (vg)</td>
+<td>£5.75</td>
+</tr>
+<tr>
+<td>sweetcorn &amp; coriander fritter with spicy black beans (v) with poached egg OR avocado</td>
+<td>£5.50</td>
+</tr>
+<tr>
+<td>brioche french toast with orange mascarpone, poached pears, candied pecan &amp; chocolate shards OR smoked bacon &amp; cinnamon syrup</td>
+<td>£5.25</td>
+</tr>
+<tr>
+<td>bagel with poached egg, sausage &amp; bacon</td>
+<td>£6.25</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<div class="siteorigin-widget-tinymce textwidget">
+<h3>Lunch</h3>
+    <p><i>add 2 salads to any of the following for £2</i></p>
+<table style="text-align: left;">
+<tbody>
+<tr>
+<td>Soup with sourdough bread (vg)</td>
+<td>£4.50&nbsp;</td>
+</tr>
+<tr>
+<td>Moroccan spiced lamb shoulder, kale &amp; chickpea stew with cous cous &amp; sour dough bread</td>
+<td>&nbsp;£7.00</td>
+</tr>
+<tr>
+<td>Courgette and feta quiche (v)</td>
+<td>&nbsp;£5.75</td>
+</tr>
+<tr>
+<td>Chicken and mushroom pie</td>
+<td>&nbsp;£6.25</td>
+</tr>
+<tr>
+<td>Baked curried lentil, cauliflower &amp; mango dahl (vg) with hummus &amp; naan bread [add chicken £1.5]</td>
+<td>&nbsp;£6.25</td>
+</tr>
+<tr>
+<td>District sausage roll (pork, garlic, chilli &amp; fennel)</td>
+<td>&nbsp;£3.75</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+<div class="siteorigin-widget-tinymce textwidget">
+<h3>Sandwiches</h3>
+    <p><i>served with small scoop of salad<br>
+ add 2 large scoops of salads to any of the following £2<br>
+ add a cup of soup £2<br>
+ </i></p>
+<table style="text-align: left;">
+<tbody>
+<tr>
+<td>Croque-monsieur [toasted ham and cheese]</td>
+<td>&nbsp;£4.95</td>
+</tr>
+<tr>
+<td>Chicken melt with smoked tomato pesto and cheddar</td>
+<td>&nbsp;£4.95</td>
+</tr>
+<tr>
+<td>Pulled pork with Asian slaw &amp; mayo</td>
+<td>&nbsp;£4.95</td>
+</tr>
+<tr>
+<td>Spicy black bean and guacamole quesadilla (vg)</td>
+<td>&nbsp;£4.95</td>
+</tr>
+<tr>
+<td>Add chicken &amp; cheese</td>
+<td>£1.50</td>
+</tr>
+<tr>
+<td>Green goddess grilled cheese with avocado pesto (vg)</td>
+<td>£5.25</td>
+</tr>
+</tbody>
+</table>
+</div>
+        
+
+
+
+<div class="siteorigin-widget-tinymce textwidget">
+<h3>Salads</h3>
+    <p><i>choose 3 or per scoop</i></p>
+<table>
+<tbody>
+<tr>
+<td>Raw broccoli, quinoa, sesame, lemongrass &amp; ginger (vg)</td>
+<td>£4.50</td>
+</tr>
+<tr>
+<td>Wild rice, rocket, almond &amp; sultana (vg)</td>
+<td>&nbsp;£4.50</td>
+</tr>
+<tr>
+<td>Curried chickpea (vg)</td>
+<td>&nbsp;£4.50</td>
+</tr>
+<tr>
+<td>Extra</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>toasted sourdough x 2, sliced chicken, sausage x 2, smoked bacon x 2, poached egg x2, 1/2 avocado</td>
+<td>&nbsp;£1.50</td>
+</tr>
+</tbody>
+</table>
+</div>        
+
+
+
+
+
+<div class="siteorigin-widget-tinymce textwidget">
+<h3>Espresso</h3>
+    <table>
+<tbody><tr>
+<td>Espresso</td>
+<td>£2</td>
+</tr>
+<tr>
+<td>Americano</td>
+<td>£2.20</td>
+</tr>
+<tr>
+<td>Flat White</td>
+<td>£2.40</td>
+</tr>
+<tr>
+<td>Cappuccino</td>
+<td>£2.40</td>
+</tr>
+<tr>
+<td>Latte</td>
+<td>£2.40</td>
+</tr>
+<tr>
+<td>Cortado</td>
+<td>£2.20</td>
+</tr>
+<tr>
+<td>Macchiato</td>
+<td>£2.20</td>
+</tr>
+<tr>
+<td>Flat White</td>
+<td>£2.40</td>
+</tr>
+<tr>
+<td>Mocha</td>
+<td>£2.60</td>
+</tr>
+<tr>
+<td>Filter</td>
+<td>£3</td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<div class="siteorigin-widget-tinymce textwidget">
+<h3>Suki Tea</h3>
+    <table>
+<tbody><tr>
+<td>Belfast Brew</td>
+<td>£2.20</td>
+</tr>
+<tr>
+<td>Speciality Teas</td>
+<td>£2.50</td>
+</tr>
+<tr>
+<td>Earl Grey</td>
+<td></td>
+</tr>
+<tr>
+<td>Peppermint</td>
+<td></td>
+</tr>
+<tr>
+<td>Chai</td>
+<td></td>
+</tr>
+<tr>
+<td>Red Berry</td>
+<td></td>
+</tr>
+<tr>
+<td>Pink Grapefruit</td>
+<td></td>
+</tr>
+<tr>
+<td>Apple Loves Mint</td>
+<td></td>
+</tr>
+<tr>
+<td>Oolong Orange Blossom</td>
+<td></td>
+</tr>
+<tr>
+<td>Green Tea Ginseng</td>
+<td></td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+
+<div class="siteorigin-widget-tinymce textwidget">
+<h3>Hot Drinks</h3>
+    <table>
+<tbody><tr>
+<td>Matcha Latte</td>
+<td>£2.20</td>
+</tr>
+<tr>
+<td>Hot Chocolate</td>
+<td>£2.50</td>
+</tr>
+<tr>
+<td>Non-Dairy Milk</td>
+<td>20p</td>
+</tr>
+<tr>
+<td>Oat, Almond or Soy</td>
+<td></td>
+</tr>
+</tbody></table>
+</div>
+
+
+<div class="siteorigin-widget-tinymce textwidget">
+<h3>Cold Drinks</h3>
+    <table>
+<tbody><tr>
+<td>Still Water</td>
+<td>£1.80</td>
+</tr>
+<tr>
+<td>Sparkling Water</td>
+<td>£1.80</td>
+</tr>
+<tr>
+<td>Fresh Orange Juice</td>
+<td>£2.00</td>
+</tr>
+<tr>
+<td>San Pellegrino Lemon</td>
+<td>£2.30</td>
+</tr>
+<tr>
+<td>San Pellegrino Orange</td>
+<td>£2.30</td>
+</tr>
+<tr>
+<td>San Pellegrino Blood Orange</td>
+<td>£2.30</td>
+</tr>
+<tr>
+<td>San Pellegrino Grapefruit</td>
+<td>£2.30</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<div class="so-widget-sow-editor so-widget-sow-editor-base">
+<div class="siteorigin-widget-tinymce textwidget">
+    <h3 style="margin-bottom: 0px;">bailies coffee roasters</h3>
+<p><i>espresso beans</i><br>
+Bailies Coffee is a close-knit team of dedicated people passionate about creating world class coffee experiences and having a lot of fun along the way. They are proud to source coffee from some of the world’s best producers, and build ethical, sustainable long term relationships with coffee farming communities committed to quality coffee production. They take meticulous care, pride and attention to detail at every stage of the coffee journey from tasting, sourcing and roasting. Our Colombian, single origin espresso is available to buy from our retail shelves.</p>
+<h3 style="margin-bottom: 0px;">broighter gold rapeseed oil</h3>
+<p><i>salad dressings</i></p>
+<p>The Kane Family has been farming in Myroe for well over 100 years.&nbsp; Richard (sixth generation farmer) now works the land here at Broglasco Farm, Limavady with the latest machinery whilst still using traditional methods &amp; modern techniques. Rapeseed oil is naturally high in omega 3, 6 &amp; 9 and is used in most of our dishes in place of olive oil. We also sell regular cold pressed and flavour oils on our retail shelves. suki tea</p>
+<h3 style="margin-bottom: 0px;">loose leaf teas</h3>
+<p>Suki ethically source and blend their loose leaf teas, herbal infusions and fruit blends from all over the world. We stock a range of prepackaged loose leaf teas for you to take home &amp; brew.</p>
+<h3 style="margin-bottom: 0px;">Just Live a little</h3>
+<p><i>granola</i></p>
+<p>Jill &amp; David started making granola from their Strangford Lough farmhouse in 2011 as something to serve with their yoghurt, which was a little tart. The business has grown from strength to strength since. We serve their gluten free triple nut granola on our brunch menu and retail packs to take home.</p>
+<h3 style="margin-bottom: 0px;">Michel’s</h3>
+<p><i>fruit &amp; veg</i></p>
+<p>Michel’s is an Ormeau Road institution. Michel can be found in the store (number 435) most morning after visiting the local farmers markets to pick up the freshest of produce. We work closely with him to ensure we offer the best of locally sourced, seasonal fruit &amp; veg.</p>
+</div>
+</div>
+
+    <!--                         <ul id="listview"></ul>
+
+
+                            <p>Page content goes here</p> -->
+                            <!-- Link to another page -->
+<!--                             <a href="about.html">About app</a>
+ -->                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <a href="index.html" class="link"><img src="img/home.png" style="width: 30px;"></a>
+                    <a href="menu.html" class="link"><img src="img/menu.png" style="width: 30px;"></a>
+                    <a href="findus.html" class="link"><img src="img/location.png" style="width: 30px;"></a>
+                    <a href="wifi.html" class="link"><img src="img/wifi.png" style="width: 30px;"></a>                                       
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+
+</body>
+
+</html>
