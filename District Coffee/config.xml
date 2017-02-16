@@ -8,6 +8,8 @@
         PhoneGap Team
     </author>
     <content src="index.html" />
+        <icon src="www/img/icon.png" />
+
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
@@ -30,7 +32,7 @@
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <platform name="android">
+    <!-- <platform name="android">
 <icon platform="android" qualifier="ldpi" src="www/res/icons/android/icon-36-ldpi.png"/>
 <icon platform="android" qualifier="mdpi" src="www/res/icons/android/icon-48-mdpi.png"/>
 <icon platform="android" qualifier="hdpi" src="www/res/icons/android/icon-72-hdpi.png"/>
@@ -61,17 +63,17 @@
 <splash platform="ios" src="res/screens/ios/screen-iphone-portrait-736h.png" width="1242" height="2208" />
 <splash platform="ios" src="res/screens/ios/screen-ipad-portrait.png" width="768" height="1024" />
 <splash platform="ios" src="res/screens/ios/screen-ipad-portrait-2x.png" width="1536" height="2048" />
-    </platform>
-    <platform name="wp8">
+    </platform> -->
+   <!--  <platform name="wp8">
 <icon platform="wp8" src="www/res/icons/wp8/ApplicationIcon.png" width="99" height="99" />
 <icon platform="wp8" src="www/res/icons/wp8/Background.png" width="159" height="159" />
-    </platform>
-    <platform name="windows">
+    </platform> -->
+<!--     <platform name="windows">
 <icon platform="windows" src="www/res/icons/windows8/logo.png" width="150" height="150" />
 <icon platform="windows" src="www/res/icons/windows8/smalllogo.png" width="30" height="30" />
 <icon platform="windows" src="www/res/icons/windows8/storelogo.png" width="50" height="50" />
     </platform>
-    <access origin="*" />
+ -->    <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
