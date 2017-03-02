@@ -8,12 +8,13 @@
     </feature>
     <name>District Coffee</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Belfast coffee shop / deli serving up fine coffee, fresh food and a warm welcome to one and all. 
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
     <content src="index.html" />
+    <icon src="www/img/icon.png" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

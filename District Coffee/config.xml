@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.phonegap.districtcoffee" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>District Coffee</name>
     <description>
         Belfast coffee shop / deli serving up fine coffee, fresh food and a warm welcome to one and all. 
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="conormclav@gmail.com" href="http://www.conormclaverty.co.uk">
+        Conor
     </author>
     <content src="index.html" />
         <icon src="www/img/icon.png" />
